@@ -1,0 +1,22 @@
+package idusw.springboot.boardthymeleaf.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity // 엔티티(개체) 클래스임으로 나타내는 애노테이션
+@Table(name = "a_memo")
+
+@ToString   // lombok 라이브러리 사용
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class MemoEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
+    private Long mno;
+
+    @Column(length = 200, nullable = false)
+    private String memoText;
+}
